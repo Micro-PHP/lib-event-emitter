@@ -1,0 +1,20 @@
+{
+    "name": "micro/event-emitter",
+    "type": "library",
+    "version": "0.1",
+    "description": "Micro Framework: Event emitter component",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Micro\\Component\\EventEmitter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Stanislau.Komar",
+            "email": "stanislau_komar@epam.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
