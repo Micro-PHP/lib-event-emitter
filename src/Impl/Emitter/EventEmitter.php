@@ -11,10 +11,13 @@ use Micro\Component\EventEmitter\ListenerProviderInterface;
 class EventEmitter implements EventEmitterInterface
 {
     /**
-     * @param ListenerProviderInterface[] $listenerProviderStorage
+     * @var ListenerProviderInterface[]
      */
-    public function __construct(private array $listenerProviderStorage)
+    private array $listenerProviderStorage;
+
+    public function __construct()
     {
+        $this->listenerProviderStorage = [];
     }
 
     /**
@@ -28,8 +31,18 @@ class EventEmitter implements EventEmitterInterface
     }
 
     /**
-     * @param ListenerProviderInterface $provider
-     * @param EventInterface $event
+     * {@inheritDoc}
+     */
+    public function addListenerProvider(ListenerProviderInterface $listenerProvider): EventEmitterInterface
+    {
+        $this->listenerProviderStorage[] = $listenerProvider;
+
+        return $this;
+    }
+
+    /**
+     * @param  ListenerProviderInterface $provider
+     * @param  EventInterface            $event
      * @return void
      */
     private function provideEventToEventProvider(ListenerProviderInterface $provider, EventInterface $event): void
@@ -40,8 +53,8 @@ class EventEmitter implements EventEmitterInterface
     }
 
     /**
-     * @param EventListenerInterface $listener
-     * @param EventInterface $event
+     * @param  EventListenerInterface $listener
+     * @param  EventInterface         $event
      * @return void
      */
     private function provideEventToListener(EventListenerInterface $listener, EventInterface $event): void
