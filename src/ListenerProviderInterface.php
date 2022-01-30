@@ -12,14 +12,17 @@ interface ListenerProviderInterface
     public function getListenersForEvent(EventInterface $event): iterable;
 
     /**
-     * @param EventListenerInterface[] $listeners
-     * @return void
+     * @return iterable<EventListenerInterface>
      */
-    public function registerListeners(array $listeners): void;
+    public function getEventListeners(): iterable;
 
     /**
-     * @param EventListenerInterface $listener
-     * @return void
+     * @return string
      */
-    public function registerListener(EventListenerInterface $listener): void;
+    public function getName(): string;
+
+    /**
+     * @return string
+     */
+    public function __toString(): string;
 }
