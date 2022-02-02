@@ -4,7 +4,6 @@ namespace Micro\Component\EventEmitter;
 
 use Micro\Component\EventEmitter\Impl\Emitter\EventEmitter;
 
-
 class EventEmitterFactory implements EventEmitterFactoryInterface
 {
     /**

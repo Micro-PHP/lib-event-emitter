@@ -7,7 +7,6 @@ use Micro\Component\EventEmitter\EventInterface;
 use Micro\Component\EventEmitter\EventListenerInterface;
 use Micro\Component\EventEmitter\ListenerProviderInterface;
 
-
 class EventEmitter implements EventEmitterInterface
 {
     /**

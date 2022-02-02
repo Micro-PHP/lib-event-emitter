@@ -6,7 +6,6 @@ use Micro\Component\EventEmitter\EventInterface;
 use Micro\Component\EventEmitter\EventListenerInterface;
 use Micro\Component\EventEmitter\ListenerProviderInterface;
 
-
 abstract class AbstractListenerProvider implements ListenerProviderInterface
 {
     /**
