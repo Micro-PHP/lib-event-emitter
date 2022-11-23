@@ -1,7 +1,7 @@
 {
     "name": "micro/event-emitter",
     "type": "library",
-    "version": "0.1",
+    "version": "1.0",
     "description": "Micro Framework: Event emitter component",
     "license": "MIT",
     "autoload": {
