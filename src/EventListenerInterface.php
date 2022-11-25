@@ -14,5 +14,5 @@ interface EventListenerInterface
      * @param  EventInterface $event
      * @return bool
      */
-    public function supports(EventInterface $event): bool;
+    public static function supports(EventInterface $event): bool;
 }

@@ -1,7 +1,7 @@
 {
     "name": "micro/event-emitter",
     "type": "library",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Micro Framework: Event emitter component",
     "license": "MIT",
     "autoload": {
@@ -16,6 +16,7 @@
         }
     ],
     "require": {
+        "micro/kernel": "^1",
         "php": ">=8.0"
     }
 }

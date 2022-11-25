@@ -12,7 +12,7 @@ interface ListenerProviderInterface
     public function getListenersForEvent(EventInterface $event): iterable;
 
     /**
-     * @return iterable<EventListenerInterface>
+     * @return iterable<class-string<EventListenerInterface>>
      */
     public function getEventListeners(): iterable;
 
