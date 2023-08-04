@@ -1,12 +1,10 @@
 <?php
 
-namespace Micro\Component\EventEmitter;
+namespace Micro\Framework\EventEmitter;
 
-interface ListenerProviderInterface
+interface ListenerProviderInterface extends \Stringable
 {
     /**
-     * @param EventInterface $event
-     *
      * @return iterable<EventListenerInterface>
      */
     public function getListenersForEvent(EventInterface $event): iterable;
@@ -16,13 +14,5 @@ interface ListenerProviderInterface
      */
     public function getEventListeners(): iterable;
 
-    /**
-     * @return string
-     */
     public function getName(): string;
-
-    /**
-     * @return string
-     */
-    public function __toString(): string;
 }

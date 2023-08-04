@@ -1,11 +1,8 @@
 <?php
 
-namespace Micro\Component\EventEmitter;
+namespace Micro\Framework\EventEmitter;
 
 interface EventEmitterFactoryInterface
 {
-    /**
-     * @return EventEmitterInterface
-     */
     public function create(): EventEmitterInterface;
 }

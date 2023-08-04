@@ -1,11 +1,11 @@
 <?php
 
-namespace Micro\Component\EventEmitter\Impl\Emitter;
+namespace Micro\Framework\EventEmitter\Impl\Emitter;
 
-use Micro\Component\EventEmitter\EventEmitterInterface;
-use Micro\Component\EventEmitter\EventInterface;
-use Micro\Component\EventEmitter\EventListenerInterface;
-use Micro\Component\EventEmitter\ListenerProviderInterface;
+use Micro\Framework\EventEmitter\EventEmitterInterface;
+use Micro\Framework\EventEmitter\EventInterface;
+use Micro\Framework\EventEmitter\EventListenerInterface;
+use Micro\Framework\EventEmitter\ListenerProviderInterface;
 
 class EventEmitter implements EventEmitterInterface
 {
@@ -19,9 +19,6 @@ class EventEmitter implements EventEmitterInterface
         $this->listenerProviderStorage = [];
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function emit(EventInterface $event): void
     {
         foreach ($this->listenerProviderStorage as $provider) {
@@ -29,9 +26,6 @@ class EventEmitter implements EventEmitterInterface
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function addListenerProvider(ListenerProviderInterface $listenerProvider): EventEmitterInterface
     {
         $this->listenerProviderStorage[] = $listenerProvider;
@@ -39,11 +33,6 @@ class EventEmitter implements EventEmitterInterface
         return $this;
     }
 
-    /**
-     * @param  ListenerProviderInterface $provider
-     * @param  EventInterface            $event
-     * @return void
-     */
     private function provideEventToEventProvider(ListenerProviderInterface $provider, EventInterface $event): void
     {
         foreach ($provider->getListenersForEvent($event) as $listener) {
@@ -51,11 +40,6 @@ class EventEmitter implements EventEmitterInterface
         }
     }
 
-    /**
-     * @param  EventListenerInterface $listener
-     * @param  EventInterface         $event
-     * @return void
-     */
     private function provideEventToListener(EventListenerInterface $listener, EventInterface $event): void
     {
         $listener->on($event);
