@@ -1,13 +1,8 @@
 {
     "name": "micro/event-emitter",
-    "type": "micro-library",
     "description": "Micro Framework: Event emitter component",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Micro\\Framework\\EventEmitter\\": "/"
-        }
-    },
+    "type": "library",
     "authors": [
         {
             "name": "Stanislau.Komar",
@@ -15,8 +10,16 @@
         }
     ],
     "require": {
-        "php": ">=8.2",
+        "php": "^8.2",
         "micro/kernel": "^2.0"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Micro\\Framework\\EventEmitter\\": "/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
 }
